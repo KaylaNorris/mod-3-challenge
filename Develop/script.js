@@ -9,9 +9,10 @@ let choices = ""
 let generatePassword = function() {
   //determine password length requirement
   let passLength = window.prompt("Enter password length requirement: 8-128 characters");
-  //alert if value is not between 8 and 128
+  //alert if value is not between 8 and 128 and restarts the process with return
   if (passLength < 8 || passLength > 128) {
     window.alert("Length must be between 8 and 128 characters");
+    return
   } 
   else {
   //determine password character requirements
@@ -74,13 +75,18 @@ let generatePassword = function() {
   }
 }
 
+//array placeholder 
   let password = []; 
 
+//random selection
   for (var i = 0; i < passLength; i++) {
-  let selection = selected[Math.floor(Math.random() * selected.length)];
-  password.push(selection)
-  return selection
+    let selection = selected[Math.floor(Math.random() * selected.length)];
+    password.push(selection)
   }  
+
+  //converts the array to a string 
+  let ps = password.join("")
+  return ps
 }
 
 
@@ -121,10 +127,10 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var ps = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = ps;
 
 }
 
