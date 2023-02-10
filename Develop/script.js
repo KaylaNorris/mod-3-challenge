@@ -20,9 +20,10 @@ let generatePassword = function() {
   let selectUppercase = window.confirm("Select OK if your password requires uppercase letters");
   let selectNumbers = window.confirm("Select OK if your password requires numbers");
   let selectSpecial = window.confirm("Select OK if your password requires special characters");
-  //alert if no requirement is selected
-  if (!selectLowercase && !selectUppercase && !selectNumbers && !selectSpecial === false) {
+  //alert if no requirement is selected and restarts the process 
+  if (!selectLowercase && !selectUppercase && !selectNumbers && !selectSpecial) {
     window.alert("Please select at least one password requirment");
+    return
   }
   // all four requirements selected
   else if (selectLowercase && selectUppercase && selectNumbers && selectSpecial) {
@@ -88,37 +89,6 @@ let generatePassword = function() {
   let ps = password.join("")
   return ps
 }
-
-
-
-
-  
-
-// //Select lowercase, uppercase, numbers, and/or special characters based on user input-STILL WORKING ON
-//   if (selectLowercase === true) {
-//    choice = Math.floor(Math.random() * lowercase.length);
-//   }
-
-//   if (selectUppercase === true) {
-//     choice = Math.floor(Math.random() * uppercase.length);
-//   }
-
-//   if (selectNumbers === true) {
-//    choice = Math.floor(Math.random() * numbers.length);
-//   }
-
-//   if (selectSpecial === true) {
-//     choice = Math.floor(Math.random() * special.length);
-//   }
-
-//   //Incorporates user password length choice-STILL WORKING ON 
-//   for (let i = 0; i < passLength; i++) {
-//     let result = choice[Math.floor(Math.random() * choice.length)];
-//     return result
-//   }
-// }
-
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
