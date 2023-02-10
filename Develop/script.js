@@ -15,42 +15,57 @@ let generatePassword = function() {
   if (!selectLowercase && !selectUppercase && !selectNumbers && !selectSpecial === false) {
     window.alert("Please select at least one password requirment");
   }
+  // all four requirements selected
   else if (selectLowercase && selectUppercase && selectNumbers && selectSpecial) {
     choice = lowercase.concat(uppercase, numbers, special)
   }
+  //3 requirements selected
+  else if (selectLowercase && selectUppercase &&selectNumbers) {
+    choice = lowercase.concat(uppercase, numbers)
+  } 
+  else if (selectUppercase && selectNumbers && selectSpecial) {
+    choice = uppercase.concat(numbers,special)
+  }  
+  else if (selectLowercase && selectNumbers && selectSpecial) {
+    choice = lowercase.concat(numbers,special)
+  }
+  else if (selectLowercase && selectUppercase && selectSpecial) {
+    choice = lowercase.concat(uppercase,special)
   }
 
-  //determine password length requirement
-  let passLength = window.prompt("Enter password length requirement: 8-128 characters");
-  //alert if value is not between 8 and 128
-  if (passLength < 8 || passLength > 128) {
-    window.alert("Length must be between 8 and 128 characters");
   }
+
+//   //determine password length requirement
+//   let passLength = window.prompt("Enter password length requirement: 8-128 characters");
+//   //alert if value is not between 8 and 128
+//   if (passLength < 8 || passLength > 128) {
+//     window.alert("Length must be between 8 and 128 characters");
+//   }
   
 
-//Select lowercase, uppercase, numbers, and/or special characters based on user input-STILL WORKING ON
-  if (selectLowercase === true) {
-   choice = Math.floor(Math.random() * lowercase.length);
-  }
+// //Select lowercase, uppercase, numbers, and/or special characters based on user input-STILL WORKING ON
+//   if (selectLowercase === true) {
+//    choice = Math.floor(Math.random() * lowercase.length);
+//   }
 
-  if (selectUppercase === true) {
-    choice = Math.floor(Math.random() * uppercase.length);
-  }
+//   if (selectUppercase === true) {
+//     choice = Math.floor(Math.random() * uppercase.length);
+//   }
 
-  if (selectNumbers === true) {
-   choice = Math.floor(Math.random() * numbers.length);
-  }
+//   if (selectNumbers === true) {
+//    choice = Math.floor(Math.random() * numbers.length);
+//   }
 
-  if (selectSpecial === true) {
-    choice = Math.floor(Math.random() * special.length);
-  }
+//   if (selectSpecial === true) {
+//     choice = Math.floor(Math.random() * special.length);
+//   }
 
-  //Incorporates user password length choice-STILL WORKING ON 
-  for (let i = 0; i < passLength; i++) {
-    let result = choice[Math.floor(Math.random() * choice.length)];
-    return result
-  }
-}
+//   //Incorporates user password length choice-STILL WORKING ON 
+//   for (let i = 0; i < passLength; i++) {
+//     let result = choice[Math.floor(Math.random() * choice.length)];
+//     return result
+//   }
+// }
 
 
 
