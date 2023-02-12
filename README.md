@@ -13,7 +13,8 @@ To begin, you click the red "generate password" button. If an incorrect length i
 
 
 ![Screenshot 1](assets/images/password-generator-screenshot.png)
-
+![Screenshot 2](assets/images/password-generator-screenshot2.png)
+![Screenshot 3](assets/images/password-generator-screenshot3.png)
 
  https://kaylanorris.github.io/password-generator/
 
